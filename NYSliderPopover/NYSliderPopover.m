@@ -9,6 +9,8 @@
 #import "NYSliderPopover.h"
 #import "NYPopover.h"
 
+#define kSliderHandleCompensation 15.0f 
+
 @implementation NYSliderPopover
 
 #pragma mark -
@@ -80,7 +82,7 @@
 		
 		value = (value - maxMin) + (minimum * 1.0);
 		value = value / maxMin;
-		value = value * 11.0;
+		value = value * kSliderHandleCompensation;
 		
 		x = x - value;
         
@@ -88,7 +90,7 @@
 		
 		value = (maxMin - value) + (minimum * 1.0);
 		value = value / maxMin;
-		value = value * 11.0;
+		value = value * kSliderHandleCompensation;
 		
 		x = x + value;
 	}
